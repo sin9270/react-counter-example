@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import IncrementButton from "../containers/IncrementButton";
-import Count from "../containers/Count";
+import IncrementButton from "./IncrementButton";
+import Count from "./Count";
+import { connect } from 'react-redux';
 
 class Counter extends Component {
   constructor(props) {
@@ -39,4 +40,22 @@ class Counter extends Component {
   }
 }
 
-export default Counter;
+const mapStateToProps = (state) => {
+  return { value: state };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onIncrement: () => dispatch({ type: "INCREMENT" }),
+    onDecrement: () => dispatch({ type: "DECREMENT" }),
+    onOverride: () => dispatch({ type: "OVERRIDE" }),
+    onChangeNum: (num) => dispatch({ type: "CHANGE_NUM", payload: num }),
+  };
+};
+
+const ConnectedCounter = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Counter);
+
+export default ConnectedCounter;
