@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import IncrementButton from "./IncrementButton";
 
 class Counter extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Counter extends Component {
           value={value.inputNum}
           onChange={(e) => onChangeNum(+e.target.value)}
         />{" "}
-        <button onClick={() => onIncrement()}>+</button>{" "}
+        <IncrementButton onIncrement={onIncrement} />{" "}
         <button onClick={() => onDecrement()}>-</button>{" "}
         <button onClick={() => onOverride()}>Override</button>{" "}
         <button onClick={this.incrementIfOdd}>Increment if odd</button>{" "}
