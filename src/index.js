@@ -13,6 +13,10 @@ const render = () =>
       value={store.getState()}
       onIncrement={() => store.dispatch({ type: "INCREMENT" })}
       onDecrement={() => store.dispatch({ type: "DECREMENT" })}
+      onOverride={() => store.dispatch({ type: "OVERRIDE" })}
+      onChangeNum={(num) =>
+        store.dispatch({ type: "CHANGE_NUM", payload: num })
+      }
     />,
     rootEl
   );

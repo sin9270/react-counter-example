@@ -1,10 +1,14 @@
-export default (state = 0, action) => {
+export default (state = { count: 0, inputNum: 1 }, action) => {
   switch (action.type) {
     case 'INCREMENT':
-      return state + 1
+      return { count: state.count + 1, inputNum: state.inputNum };
     case 'DECREMENT':
-      return state - 1
+      return { count: state.count - 1, inputNum: state.inputNum };
+    case 'OVERRIDE':
+        return { count: state.inputNum, inputNum: state.inputNum };
+    case 'CHANGE_NUM':
+      return { count: state.count, inputNum: action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
