@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import IncrementButton from "./IncrementButton";
+import Count from "./Count";
 
 class Counter extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Counter extends Component {
     const { value, onIncrement, onDecrement, onOverride, onChangeNum } = this.props;
     return (
       <p>
-        Clicked: {value.count} times{" "}
+        <Count count={value.count} />{" "}
         <input
           style={{ width: 50 }}
           value={value.inputNum}
