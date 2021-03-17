@@ -23,7 +23,7 @@ class Counter extends Component {
     const { value, onIncrement, onDecrement, onOverride, onChangeNum } = this.props;
     return (
       <p>
-        <Count count={value.count} />{" "}
+        <Count />{" "}
         <input
           style={{ width: 50 }}
           value={value.inputNum}

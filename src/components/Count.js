@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 class Count extends Component {
   render() {
@@ -6,4 +7,18 @@ class Count extends Component {
   }
 }
 
-export default Count;
+const mapStateToProps = (state) => {
+  return {count: state.count};
+};
+
+// こう書くこともできる
+// const mapStateToProps = ({count}) => {
+//   return { count };
+// };
+
+const ConnectedCount = connect(
+  mapStateToProps,
+  null,
+)(Count);
+
+export default ConnectedCount;
