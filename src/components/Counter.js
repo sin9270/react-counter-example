@@ -20,7 +20,7 @@ class Counter extends Component {
   }
 
   render() {
-    const { value, onIncrement, onDecrement, onOverride, onChangeNum } = this.props;
+    const { value, onDecrement, onOverride, onChangeNum } = this.props;
     return (
       <p>
         <Count />{" "}
@@ -29,7 +29,7 @@ class Counter extends Component {
           value={value.inputNum}
           onChange={(e) => onChangeNum(+e.target.value)}
         />{" "}
-        <IncrementButton onIncrement={onIncrement} />{" "}
+        <IncrementButton />{" "}
         <button onClick={() => onDecrement()}>-</button>{" "}
         <button onClick={() => onOverride()}>Override</button>{" "}
         <button onClick={this.incrementIfOdd}>Increment if odd</button>{" "}
