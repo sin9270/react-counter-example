@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import IncrementButton from "./IncrementButton";
-import Count from "./Count";
+import IncrementButton from "../containers/IncrementButton";
+import Count from "../containers/Count";
 
 class Counter extends Component {
   constructor(props) {
