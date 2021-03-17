@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import IncrementButton from "./IncrementButton";
-import Count from "./Count";
 import { connect } from 'react-redux';
 
 class Counter extends Component {
@@ -24,13 +22,11 @@ class Counter extends Component {
     const { value, onDecrement, onOverride, onChangeNum } = this.props;
     return (
       <p>
-        <Count />{" "}
         <input
           style={{ width: 50 }}
           value={value.inputNum}
           onChange={(e) => onChangeNum(+e.target.value)}
         />{" "}
-        <IncrementButton />{" "}
         <button onClick={() => onDecrement()}>-</button>{" "}
         <button onClick={() => onOverride()}>Override</button>{" "}
         <button onClick={this.incrementIfOdd}>Increment if odd</button>{" "}
